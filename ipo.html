@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>IPO Services - Investor by Uday</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IPO, Initial Public Offering, Stock Market, Investment, Share Market" name="keywords">
+    <meta content="Stay updated with the latest IPO listings and investment opportunities. Get expert guidance on IPO investments." name="description">
+    <link href="img/favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .table-responsive {
+            margin: 30px 0;
+        }
+        .table-wrapper {
+            min-width: 1000px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        }
+        .table-title {
+            padding-bottom: 10px;
+            margin: 0 0 10px;
+        }
+        .table-title h2 {
+            margin: 8px 0 0;
+            font-size: 22px;
+        }
+        .search-box {
+            position: relative;
+            float: right;
+        }
+        .search-box input {
+            height: 34px;
+            border-radius: 20px;
+            padding-left: 35px;
+            border-color: #ddd;
+            box-shadow: none;
+        }
+        .search-box input:focus {
+            border-color: #3FBAE4;
+        }
+        .search-box i {
+            color: #a0a5b1;
+            position: absolute;
+            font-size: 19px;
+            top: 8px;
+            left: 10px;
+        }
+        .status-badge {
+            font-size: 12px;
+            padding: 3px 6px;
+            border-radius: 3px;
+            color: white;
+        }
+        .status-upcoming { background-color: #ffc107; }
+        .status-open { background-color: #28a745; }
+        .status-closed { background-color: #dc3545; }
+        .table-hover tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+        .btn-group {
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .btn-group .btn {
+            margin: 2px;
+            border-radius: 20px;
+            font-size: 14px;
+            padding: 5px 15px;
+            transition: all 0.3s;
+        }
+        .btn-group .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .btn-group .btn.active {
+            background-color: #0d6efd;
+            color: white;
+            border-color: #0d6efd;
+        }
+        .table th {
+            cursor: pointer;
+            position: relative;
+        }
+        .table th i.fa-sort {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .highlight-yellow {
+            background-color: #fff3cd !important;
+        }
+        .highlight-green {
+            background-color: #d4edda !important;
+        }
+        .highlight-red {
+            background-color: #f8d7da !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <!-- Header Start -->
+    <div class="container-fluid hero-header bg-light py-5 mb-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 mb-3 animated slideInDown">IPO Investment Services</h1>
+                    <p class="animated slideInDown">Stay updated with the latest IPO opportunities and make informed investment decisions</p>
+                </div>
+                <div class="col-lg-6 animated fadeIn">
+                    <img class="img-fluid animated pulse infinite" style="animation-duration: 3s;" src="img/hero-2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- IPO Table Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto" style="max-width: 500px;">
+                <h1 class="display-6 mb-5">Current IPO Listings</h1>
+            </div>
+            <div class="table-responsive">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h2>Live IPO <b>Updates</b></h2>
+                                <div class="btn-group mt-2" role="group" aria-label="IPO Categories">
+                                    <button type="button" class="btn btn-outline-primary active" data-category="all">All</button>
+                                    <button type="button" class="btn btn-outline-primary" data-category="sme">SME</button>
+                                    <button type="button" class="btn btn-outline-primary" data-category="mainboard">Mainboard</button>
+                                    <button type="button" class="btn btn-outline-primary" data-category="upcoming">Upcoming</button>
+                                    <button type="button" class="btn btn-outline-primary" data-category="open">Open</button>
+                                    <button type="button" class="btn btn-outline-primary" data-category="closing">Closing Today</button>
+                                    <button type="button" class="btn btn-outline-primary" data-category="close">Close</button>
+                                    <button type="button" class="btn btn-outline-primary" data-category="listed">Listed</button>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="search-box">
+                                    <i class="fa fa-search"></i>
+                                    <input type="text" class="form-control" id="searchInput" placeholder="Search IPOs...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable(0)">Name <i class="fa fa-sort"></i></th>
+                                <th onclick="sortTable(1)">GMP <i class="fa fa-sort"></i></th>
+                                <th onclick="sortTable(2)">Fire Rating <i class="fa fa-sort"></i></th>
+                                <th onclick="sortTable(3)">Sub <i class="fa fa-sort"></i></th>
+                                <th onclick="sortTable(4)">Price <i class="fa fa-sort"></i></th>
+                                <th onclick="sortTable(5)">Est Listing <i class="fa fa-sort"></i></th>
+                                <th onclick="sortTable(6)">IPO Size <i class="fa fa-sort"></i></th>
+                                <th onclick="sortTable(7)">Lot <i class="fa fa-sort"></i></th>
+                                <th onclick="sortTable(8)">Open <i class="fa fa-sort"></i></th>
+                                <th onclick="sortTable(9)">Close <i class="fa fa-sort"></i></th>
+                                <th onclick="sortTable(10)">BoA Dt <i class="fa fa-sort"></i></th>
+                                <th onclick="sortTable(11)">Listing <i class="fa fa-sort"></i></th>
+                                <th onclick="sortTable(12)">GMP Updated <i class="fa fa-sort"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody id="ipoTableBody">
+                            <tr>
+                                <td colspan="13" class="text-center">Loading IPO data...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- IPO Table End -->
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/components.js"></script>
+
+    <!-- Initialize WOW.js for animations -->
+    <script>
+        new WOW().init();
+    </script>
+
+    <!-- IPO Data Javascript -->
+    <script>
+        let ipoData = [];
+        let currentCategory = 'all';
+
+        function fetchIPOData() {
+            const baseUrl = 'https://webnodejs.investorgain.com/cloud/report/data-read/331/1/7/2025/2025-26/0';
+            const url = `${baseUrl}/${currentCategory}?search=^&v=21-18^`;
+
+            fetch(url, {
+                headers: {
+                    'accept': 'application/json, text/plain, */*',
+                    'accept-language': 'en-US,en;q=0.9',
+                    'origin': 'https://www.investorgain.com',
+                    'referer': 'https://www.investorgain.com/'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                ipoData = data.reportTableData;
+                displayIPOData(ipoData);
+            })
+            .catch(error => {
+                console.error('Error fetching IPO data:', error);
+                document.getElementById('ipoTableBody').innerHTML = `
+                    <tr>
+                        <td colspan="13" class="text-center text-danger">Error loading IPO data. Please try again later.</td>
+                    </tr>
+                `;
+            });
+        }
+
+        function displayIPOData(data) {
+            const tableBody = document.getElementById('ipoTableBody');
+            tableBody.innerHTML = '';
+
+            data.forEach(ipo => {
+                const row = document.createElement('tr');
+                
+                // Add highlighting based on IPO category
+                if (ipo['~Highlight_Row'] === 'color-lightyellow') {
+                    row.classList.add('highlight-yellow');
+                }
+
+                // Extract company name from the HTML link
+                const nameMatch = ipo.Name.match(/>([^<]+)<\/a>/);
+                const companyName = nameMatch ? nameMatch[1] : 'N/A';
+
+                // Clean up GMP value
+                const gmpMatch = ipo.GMP.match(/₹<b>([^<]+)<\/b>/);
+                const gmp = gmpMatch ? gmpMatch[1] : 'N/A';
+
+                row.innerHTML = `
+                    <td>${ipo.Name}</td>
+                    <td>${ipo.GMP}</td>
+                    <td>${ipo['Fire Rating']}</td>
+                    <td>${ipo.Sub || 'N/A'}</td>
+                    <td>${ipo.Price || 'N/A'}</td>
+                    <td>${ipo['Est Listing'] || 'N/A'}</td>
+                    <td>${ipo['IPO Size'] || 'N/A'}</td>
+                    <td>${ipo.Lot || 'N/A'}</td>
+                    <td>${ipo.Open || 'N/A'}</td>
+                    <td>${ipo.Close || 'N/A'}</td>
+                    <td>${ipo['BoA Dt'] || 'N/A'}</td>
+                    <td>${ipo.Listing || 'N/A'}</td>
+                    <td>${ipo['GMP Updated'] || 'N/A'}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Initialize category buttons
+        document.querySelectorAll('.btn-group button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.btn-group button').forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                // Update current category and fetch data
+                currentCategory = this.getAttribute('data-category');
+                fetchIPOData();
+            });
+        });
+
+        // Add search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            searchIPOs(e.target.value);
+        });
+
+        // Initial data fetch
+        fetchIPOData();
+
+        function searchIPOs(query) {
+            const filteredData = ipoData.filter(ipo => {
+                const nameMatch = ipo.Name.match(/>([^<]+)</a>/);
+                const companyName = nameMatch ? nameMatch[1].toLowerCase() : '';
+                return companyName.includes(query.toLowerCase());
+            });
+            displayIPOData(filteredData);
+        }
+
+        function sortTable(columnIndex) {
+            const sortedData = [...ipoData].sort((a, b) => {
+                let valueA, valueB;
+
+                // Define how to extract values based on column index
+                switch(columnIndex) {
+                    case 0: // Name
+                        valueA = a.Name.match(/>([^<]+)<\/a>/)[1];
+                        valueB = b.Name.match(/>([^<]+)<\/a>/)[1];
+                        break;
+                    case 1: // GMP
+                        const gmpMatchA = a.GMP.match(/₹<b>([^<]+)<\/b>/);
+                        const gmpMatchB = b.GMP.match(/₹<b>([^<]+)<\/b>/);
+                        valueA = parseFloat(gmpMatchA ? gmpMatchA[1] : '0');
+                        valueB = parseFloat(gmpMatchB ? gmpMatchB[1] : '0');
+                        break;
+                    // Add cases for other columns as needed
+                    default:
+                        return 0;
+                }
+
+                if (valueA < valueB) return -1;
+                if (valueA > valueB) return 1;
+                return 0;
+            });
+
+            displayIPOData(sortedData);
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchIPOData();
+
+            // Search input
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                searchIPOs(e.target.value);
+            });
+
+            // Auto-refresh data every 5 minutes
+            setInterval(fetchIPOData, 300000);
+        });
+    </script>
+</body>
+</html>
